@@ -230,6 +230,14 @@ p {
     cursor: pointer;
 }
 
+.summary {
+    align-items: flex-start;
+}
+
+.summary p {
+    margin-top: 1em;
+}
+
 /* .backward {
     opacity: 0;
 } */
