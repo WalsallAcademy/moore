@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" />
+    <script defer src="../script/main.js"></script>
+    <title>Transistors and Moore's Law</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>The Transistor</h1>
+      </div>
+      <div class="text">
+        <p>
+          There are different types of transistors.
+          <br />
+          The ones inside the CPU are mostly acting as digital 'switches'.
+          <br />
+          Each on is either ON or OFF at any instant.
+        </p>
+      </div>
+      <img id="transistor" src="../img/Screenshot_11.png" alt="" />
+      <div class="controls">
+        <button class="btn-back" onclick="back()"><h3>Back</h3></button>
+        <button class="btn-next" onclick="next()"><h3>Next</h3></button>
+      </div>
+    </div>
+    <script>
+      document.querySelector("#transistor").onmousedown = () => {
+        let currentImg = document
+          .getElementById("transistor")
+          .src.split("img/");
+        currentImg.shift(0);
+        /*  document.getElementById("transistor").src = "../img/Screenshot_12.png"; */
+
+        if (currentImg[0] == "Screenshot_11.png") {
+          document.getElementById("transistor").src =
+            "../img/Screenshot_12.png";
+        } else if (currentImg[0] == "Screenshot_12.png") {
+          document.getElementById("transistor").src =
+            "../img/Screenshot_11.png";
+        }
+      };
+    </script>
+  </body>
+</html>

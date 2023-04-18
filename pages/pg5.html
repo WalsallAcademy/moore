@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" />
+    <script defer src="../script/main.js"></script>
+    <title>Transistors and Moore's Law</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Transistors and binary data</h1>
+      </div>
+      <div class="text">
+        <p>
+          All data inside the CPU is in binary form i.e. it is either 1 or 0
+          <br />
+          <br />
+          Do you remember that transistors act as switches, so they are either
+          ON or OFF?
+          <br />
+          <br />
+          Well, binary 1 could be same as a switch being OFF and binary 0 could
+          be the same as a switch being ON
+        </p>
+        <br />
+        <br />
+        <p style="color: red">
+          Click on each transistor and see how you can change the binary digit
+        </p>
+      </div>
+      <div class="binary">
+        <img
+          id="digit1"
+          onclick="change(this)"
+          src="../img/Screenshot_13.png"
+          alt=""
+        />
+        <img
+          id="digit2"
+          onclick="change(this)"
+          src="../img/Screenshot_13.png"
+          alt=""
+        />
+        <img
+          id="digit3"
+          onclick="change(this)"
+          src="../img/Screenshot_13.png"
+          alt=""
+        />
+        <img
+          id="digit4"
+          onclick="change(this)"
+          src="../img/Screenshot_13.png"
+          alt=""
+        />
+      </div>
+      <div class="controls">
+        <button class="btn-back" onclick="back()"><h3>Back</h3></button>
+        <button class="btn-next" onclick="next()"><h3>Next</h3></button>
+      </div>
+    </div>
+    <script>
+      const change = (info) => {
+        let src = info.src.split("img/");
+        src.shift();
+        console.log(src);
+
+        if (src == "Screenshot_13.png") {
+          info.src = "../img/Screenshot_14.png";
+        } else if (src == "Screenshot_14.png") {
+          info.src = "../img/Screenshot_13.png";
+        }
+      };
+    </script>
+  </body>
+</html>

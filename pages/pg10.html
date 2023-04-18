@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" />
+    <script defer src="../script/main.js"></script>
+    <title>Transistors and Moore's Law</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Transistors and binary data</h1>
+      </div>
+      <div class="text">
+        <p style="font-style: italic">
+          The number of transistors inside the latest computer chip is doubling
+          every two years and it still seems to be happening
+        </p>
+      </div>
+      <img src="../img/Screenshot_23.png" width="500" alt="" />
+
+      <div class="controls">
+        <button class="btn-back" onclick="back()"><h3>Back</h3></button>
+        <button class="btn-next" onclick="next()"><h3>Next</h3></button>
+      </div>
+    </div>
+    <script>
+      const store = () => {
+        let input = document.getElementById("in").value;
+
+        document.getElementById("out").value = input;
+
+        document.getElementById("rev").innerHTML =
+          "Some transistors inside the chip are used as memeory that stores your work";
+      };
+    </script>
+  </body>
+</html>

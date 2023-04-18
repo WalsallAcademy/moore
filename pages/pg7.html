@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" />
+    <script defer src="../script/main.js"></script>
+    <title>Transistors and Moore's Law</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Transistors and binary data</h1>
+      </div>
+      <div class="text">
+        <p>
+          Another job for transistors is to STORE data. THis is called "memory".
+          <br />
+          For example, it can store what you type on the keyboard.
+        </p>
+        <br />
+        <br />
+        <p style="color: red">
+          Enter your name in the box then press the blue button to store
+          information
+        </p>
+      </div>
+      <div class="memory">
+        <div class="col">
+          <input id="in" type="text" />
+          <img class="arrow" src="../img/arrow.png" alt="" />
+          <div class="cpu">
+            <h2>CPU</h2>
+            <button onclick="store()">Store</button>
+          </div>
+        </div>
+        <div class="row">
+          <img class="arrow-right" src="../img/arrow.png" alt="" />
+          <div class="m">
+            <label for="mem">Memory</label>
+            <input id="out" type="text" name="mem" readonly />
+            <p id="rev"></p>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn-back" onclick="back()"><h3>Back</h3></button>
+        <button class="btn-next" onclick="next()"><h3>Next</h3></button>
+      </div>
+    </div>
+    <script>
+      const store = () => {
+        let input = document.getElementById("in").value;
+
+        document.getElementById("out").value = input;
+
+        document.getElementById("rev").innerHTML =
+          "Some transistors inside the chip are used as memeory that stores your work";
+      };
+    </script>
+  </body>
+</html>

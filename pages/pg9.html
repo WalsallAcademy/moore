@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" />
+    <script defer src="../script/main.js"></script>
+    <title>Transistors and Moore's Law</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Moore's Law</h1>
+      </div>
+      <div class="text">
+        <p>
+          Gordon Moore was a brilliant engineer that helped create Intel, back
+          in the 1960s.
+          <br />
+          Intel is now one of the largest computer chip-making companies in the
+          world.
+          <br />
+          <br />
+          In 1965 he noticed that the number of transistors in a computer chip
+          was doubling roughly every two years, and predicted that it would
+          carry on. (He was right)
+          <br />
+          <br />
+          This prediction came to be knows as 'Moore's Law'.
+        </p>
+      </div>
+      <div class="law">
+        <h1>computer chip</h1>
+        <div class="time">
+          <div id="b" class="backward" style="opacity: 0">
+            <p>Backward in time</p>
+            <img
+              class="arrow-left"
+              onclick="backward()"
+              src="../img/arrow.png"
+              alt=""
+            />
+          </div>
+          <div class="square">
+            <img id="chip" src="../img/Screenshot_15.png" alt="" />
+          </div>
+          <div id="f" class="forward" style="opacity: 1" ;>
+            <p>Forward in time</p>
+            <img
+              class="arrow-right"
+              onclick="forward()"
+              src="../img/arrow.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="count">
+          <p>Year: <span id="year">1970</span></p>
+          <p>transistors count: <span id="transistor-count">2,000</span></p>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn-back" onclick="back()"><h3>Back</h3></button>
+        <button class="btn-next" onclick="next()"><h3>Next</h3></button>
+      </div>
+    </div>
+    <script>
+      let imgs = [
+        {
+          url: "../img/Screenshot_15.png",
+          year: 1970,
+          transistorCount: "2,000",
+        },
+        {
+          url: "../img/Screenshot_16.png",
+          year: 1972,
+          transistorCount: "4,000",
+        },
+        {
+          url: "../img/Screenshot_17.png",
+          year: 1974,
+          transistorCount: "8,000",
+        },
+        {
+          url: "../img/Screenshot_18.png",
+          year: 1976,
+          transistorCount: "16,000",
+        },
+        {
+          url: "../img/Screenshot_19.png",
+          year: 1990,
+          transistorCount: "1,000,000",
+        },
+        {
+          url: "../img/Screenshot_20.png",
+          year: 2000,
+          transistorCount: "80,000,000",
+        },
+        {
+          url: "../img/Screenshot_21.png",
+          year: 2009,
+          transistorCount: "1,000,000,000",
+        },
+        {
+          url: "../img/Screenshot_22.png",
+          year: 2011,
+          transistorCount: "2,000,000,000",
+        },
+      ];
+
+      let count = 0;
+
+      const backward = () => {
+        if (count > 0) {
+          count--;
+          document.getElementById("chip").src = imgs[count].url;
+          document.getElementById("year").innerHTML = imgs[count].year;
+          document.getElementById("transistor-count").innerHTML =
+            imgs[count].transistorCount;
+          document.getElementById("f").style.opacity = "1";
+        } else if (count == 0) {
+          document.getElementById("b").style.opacity = "0";
+        }
+      };
+
+      const forward = () => {
+        if (count <= 6) {
+          count++;
+          document.getElementById("chip").src = imgs[count].url;
+          document.getElementById("year").innerHTML = imgs[count].year;
+          document.getElementById("transistor-count").innerHTML =
+            imgs[count].transistorCount;
+          document.getElementById("b").style.opacity = "1";
+          console.log(count);
+        } else if (count > 6) {
+          document.getElementById("f").style.opacity = "0";
+        }
+      };
+    </script>
+  </body>
+</html>

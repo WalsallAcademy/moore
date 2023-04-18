@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" />
+    <script defer src="../script/main.js"></script>
+    <title>Transistors and Moore's Law</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Transistors and binary data</h1>
+      </div>
+      <div class="text">
+        <p>
+          Transistors can be combined inside the computer chip (CPU) to do
+          different jobs.
+          <br />
+          One those jobs is to process data. For example adding two numbers
+          together.
+        </p>
+        <br />
+        <br />
+        <p style="color: red">
+          Enter two number between 0 and 99 then press the ADD button
+        </p>
+      </div>
+      <div class="calc">
+        <div class="inputs">
+          <input id="num1" type="number" min="0" max="99" value="" />
+          <input id="num2" type="number" min="0" max="99" value="" />
+        </div>
+        <div class="arrows">
+          <img class="arrow" src="../img/arrow.png" alt="" />
+          <img class="arrow" src="../img/arrow.png" alt="" />
+        </div>
+        <div class="cpu">
+          <h2>CPU</h2>
+          <button onclick="calc()">ADD</button>
+        </div>
+        <img class="arrow" src="../img/arrow.png" alt="" />
+        <input type="number" id="result" readonly />
+      </div>
+      <div class="controls">
+        <button class="btn-back" onclick="back()"><h3>Back</h3></button>
+        <button class="btn-next" onclick="next()"><h3>Next</h3></button>
+      </div>
+    </div>
+    <script>
+      const calc = () => {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+
+        let res = parseInt(num1) + parseInt(num2);
+
+        document.getElementById("result").value = res;
+      };
+    </script>
+  </body>
+</html>
